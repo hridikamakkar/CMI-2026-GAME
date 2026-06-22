@@ -1,20 +1,39 @@
 # CMI 2026 GAME
 
-A browser-based arcade quiz challenge inspired by CMI/Tessellate-style CS and math reasoning.
+A browser-based arcade learning platform inspired by CMI/Tessellate-style CS and math practice.
 
 ## Features
 
-- Polished arcade-style start screen
-- 3-life quiz gameplay
-- Timed multiple-choice questions
-- Score, lives, level, question progress, and timer HUD
-- 20+ original CS/math questions
-- Categories including logic, binary numbers, algorithms, counting, graph theory, patterns, and math reasoning
-- Level progression every 5 questions
-- Shorter timers and higher points at higher levels
-- Correct/wrong answer feedback and answer highlighting
-- Game-over screen with final score, questions answered, highest level, and performance message
-- Responsive neon arcade UI
+- Neon arcade homepage with saved progress
+- How-it-works learning flow screen
+- Topic selection cards
+- Mini lessons before practice
+- Topic-specific quiz rounds
+- Mixed Challenge mode
+- Timed multiple-choice gameplay with 3 lives
+- Score, level, timer, progress, and feedback
+- Explanations after each answer
+- Results screen with accuracy, weakest topic, and revision suggestions
+- Simple progress tracking with `localStorage`
+
+## Game Flow
+
+1. Start from the homepage.
+2. Choose a topic or Mixed Challenge.
+3. Read a short lesson.
+4. Play an arcade quiz round.
+5. Review score, accuracy, weak areas, and revision tips.
+6. Retry the same topic, choose a new topic, or return home.
+
+## Topics
+
+- Logic
+- Binary Numbers
+- Algorithms
+- Counting & Combinatorics
+- Graph Theory Basics
+- Pattern Recognition
+- Mixed Challenge
 
 ## Run Locally
 
@@ -36,8 +55,9 @@ http://localhost:8000
 
 ## Future Improvements
 
+- Importing real practice sets
 - Sound effects
-- Local high-score leaderboard
-- More questions and topic packs
-- Mobile polish
-- Keyboard shortcuts for answer choices
+- Leaderboard
+- Spaced revision mode
+- Explanation library
+- Exam simulator mode
