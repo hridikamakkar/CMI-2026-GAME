@@ -30,6 +30,8 @@
           <p>Games Played <strong id="home-games-played">0</strong></p>
           <p>Best Accuracy <strong id="home-best-accuracy">0%</strong></p>
           <p>Last Topic <strong id="home-last-topic">None</strong></p>
+          <p>Strongest Topic <strong id="home-strongest-topic">None</strong></p>
+          <p>Weakest Topic <strong id="home-weakest-topic">None</strong></p>
         </div>
       </div>
     </section>
@@ -69,13 +71,56 @@
       </div>
     </section>
 
+    <!-- Survey screen: adjusts practice length and learning focus before the lesson. -->
+    <section id="survey-screen" class="screen">
+      <div class="page-heading">
+        <p class="eyebrow">Pre-Game Survey</p>
+        <h2 id="survey-title">Set Your Practice Mode</h2>
+        <p class="intro">Tune the round before the lesson starts. Your choices stay with this run.</p>
+      </div>
+
+      <form id="survey-form" class="survey-card">
+        <fieldset>
+          <legend>How confident are you in this topic?</legend>
+          <label><input type="radio" name="confidence" value="New to this" checked> New to this</label>
+          <label><input type="radio" name="confidence" value="Somewhat confident"> Somewhat confident</label>
+          <label><input type="radio" name="confidence" value="Very confident"> Very confident</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>What do you want to focus on?</legend>
+          <label><input type="radio" name="focus" value="Understanding concepts" checked> Understanding concepts</label>
+          <label><input type="radio" name="focus" value="Speed"> Speed</label>
+          <label><input type="radio" name="focus" value="Accuracy"> Accuracy</label>
+          <label><input type="radio" name="focus" value="Exam-style thinking"> Exam-style thinking</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Choose practice length</legend>
+          <label><input type="radio" name="length" value="5" checked> Short round: 5 questions</label>
+          <label><input type="radio" name="length" value="10"> Standard round: 10 questions</label>
+          <label><input type="radio" name="length" value="all"> Full round: all available questions</label>
+        </fieldset>
+
+        <div class="button-row">
+          <button type="button" class="secondary-button" data-go-topics>Change Topic</button>
+          <button type="submit" class="primary-button">Continue to Lesson</button>
+        </div>
+      </form>
+    </section>
+
     <!-- Lesson screen: filled from the lessons object in script.js. -->
     <section id="lesson-screen" class="screen">
       <article class="lesson-card">
         <p id="lesson-kicker" class="eyebrow">Lesson</p>
         <h2 id="lesson-title">Topic Lesson</h2>
         <p id="lesson-explanation" class="lesson-text">Lesson explanation</p>
+        <h3>Key Ideas</h3>
         <ul id="lesson-points" class="lesson-points"></ul>
+        <h3>Common Mistakes</h3>
+        <ul id="lesson-mistakes" class="lesson-points"></ul>
+        <h3>What to Watch For</h3>
+        <ul id="lesson-exam-tips" class="lesson-points"></ul>
         <div class="example-box">
           <span>Example</span>
           <p id="lesson-example">Example text</p>
@@ -134,14 +179,46 @@
         </div>
       </div>
 
+      <section class="review-section">
+        <h3>Review Your Answers</h3>
+        <div id="answer-review-list" class="answer-review-list"></div>
+      </section>
+
       <div class="button-row centered">
         <button id="retry-topic-button" class="primary-button">Retry Same Topic</button>
+        <button id="revise-weak-areas-button" class="secondary-button">Revise Weak Areas</button>
+        <button id="practice-weak-topics-button" class="secondary-button">Practice Weak Topics</button>
         <button id="choose-new-topic-button" class="secondary-button">Choose New Topic</button>
         <button id="back-home-button" class="secondary-button">Back to Home</button>
       </div>
     </section>
+
+    <!-- Focused revision screen after a quiz round. -->
+    <section id="revision-screen" class="screen">
+      <div class="page-heading">
+        <p class="eyebrow">Smart Revision</p>
+        <h2>Revise Weak Areas</h2>
+        <p id="revision-summary" class="intro">Use the explanations below to plan your next run.</p>
+      </div>
+
+      <div class="revision-focus-card">
+        <h3 id="revision-weakest-heading">Weakest Category: None</h3>
+        <ul id="smart-revision-tips" class="revision-tips"></ul>
+      </div>
+
+      <section class="review-section">
+        <h3>Explanations From Missed Questions</h3>
+        <div id="wrong-explanation-list" class="answer-review-list"></div>
+      </section>
+
+      <div class="button-row centered">
+        <button id="revision-practice-weak-button" class="primary-button">Practice Weak Topics</button>
+        <button class="secondary-button" data-go-topics>Choose New Topic</button>
+        <button class="secondary-button" data-go-home>Back to Home</button>
+      </div>
+    </section>
   </main>
 
-  <script src="script.js?v=learning-platform"></script>
+  <script src="script.js?v=survey-revision-loop"></script>
 </body>
 </html>

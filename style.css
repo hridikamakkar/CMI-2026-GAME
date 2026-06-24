@@ -62,8 +62,10 @@ button {
 #home-screen,
 #how-screen,
 #topic-screen,
+#survey-screen,
 #lesson-screen,
-#results-screen {
+#results-screen,
+#revision-screen {
   flex-direction: column;
   gap: 24px;
 }
@@ -185,10 +187,13 @@ h1 {
 .progress-card,
 .info-card,
 .topic-card,
+.survey-card,
 .lesson-card,
 .quiz-card,
 .result-panel,
 .revision-card,
+.revision-focus-card,
+.review-section,
 .example-box {
   border: 1px solid rgba(24, 216, 255, 0.22);
   border-radius: 14px;
@@ -219,7 +224,7 @@ h1 {
 }
 
 .progress-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .progress-grid p,
@@ -281,6 +286,42 @@ h1 {
   width: min(860px, 100%);
   margin: auto;
   padding: 28px;
+}
+
+.survey-card {
+  display: grid;
+  gap: 18px;
+  width: min(860px, 100%);
+  padding: 24px;
+}
+
+.survey-card fieldset {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.survey-card legend,
+.lesson-card h3 {
+  color: var(--green);
+  font-size: 0.95rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.survey-card label {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.survey-card input {
+  accent-color: var(--green);
 }
 
 .lesson-points,
@@ -451,7 +492,9 @@ h1 {
 }
 
 .result-panel,
-.revision-card {
+.revision-card,
+.revision-focus-card,
+.review-section {
   padding: 20px;
 }
 
@@ -482,6 +525,59 @@ h1 {
 
 .revise-list p {
   color: var(--muted);
+}
+
+.review-section {
+  display: grid;
+  gap: 14px;
+}
+
+.review-section h3,
+.revision-focus-card h3 {
+  margin-bottom: 0;
+  color: var(--green);
+  text-transform: uppercase;
+}
+
+.answer-review-list {
+  display: grid;
+  gap: 12px;
+}
+
+.review-card {
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  background: rgba(18, 27, 49, 0.86);
+}
+
+.review-card summary {
+  cursor: pointer;
+  color: var(--text);
+  font-weight: 900;
+}
+
+.review-card p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.review-card strong,
+.review-card h4 {
+  color: var(--text);
+}
+
+.review-correct {
+  border-color: rgba(85, 243, 154, 0.32);
+}
+
+.review-wrong {
+  border-color: rgba(255, 91, 110, 0.38);
+}
+
+.open-card h4 {
+  margin: 0 0 8px;
 }
 
 @keyframes screenIn {
